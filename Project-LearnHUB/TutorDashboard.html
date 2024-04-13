@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>tutor dashboard</title>
+    <link rel="stylesheet" href="./Style/style.css">
+    <link rel="stylesheet" href="./Style/studentDashboard.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://kit.fontawesome.com/a0c760a34f.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy" crossorigin="anonymous"></script>
+    <script src="./Script/index.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <script src="./Script/TutorDashboard.js"></script>
+    <style>
+      .footers{
+    font-family: 'Kumbh Sans', sans-serif;
+    background-color: black;
+}
+.footershref,.socialmedia{
+    color: white;
+    position: relative;
+}
+.footershref::before{
+    content: "";
+    position: absolute;
+    bottom:0;
+    left: 50%;
+    transform: translateX(-50%);
+    width:0;
+    height: 2px;
+    background-color:#0070D1;
+    visibility: hidden;
+    transition: 0.3s ease-in-out;
+}
+.footershref:hover::before,.paragraph:hover::before{
+    width:100%;
+    visibility: visible;
+}
+.socialinstagram{
+    color: white;
+}
+.socialtwitter{
+    color:white;
+}
+.socialtwitter:hover{
+    color:rgb(0, 255, 213);
+}
+.sociallinkedin{
+    color:white;
+}
+.sociallinkedin:hover{
+    color:skyblue;
+}
+.socialfacebook{
+    color:white;
+}
+.socialinstagram:hover{
+    color: pink;
+}
+.socialfacebook:hover{
+    color: blue;
+}
+
+.dashboard{
+    background-color: black;
+}
+
+.user-icon{
+     height: 200px;
+     width: 200px;
+}
+    </style>
+    <script>
+      function showProfile(){
+    document.getElementById("user-profile").style.display="block"
+    document.getElementById("user-course").style.display = "none"
+    document.getElementById("user-certificate").style.display = "none"
+    document.getElementById("user-enroll").style.display = "none"
+ }
+ 
+ function showCourses(){
+    document.getElementById("user-profile").style.display="none"
+    document.getElementById("user-course").style.display = "block"
+    document.getElementById("user-certificate").style.display = "none"
+    document.getElementById("user-enroll").style.display = "none"
+ }
+ function showEnroll(){
+    document.getElementById("user-profile").style.display="none"
+    document.getElementById("user-course").style.display = "none"
+    document.getElementById("user-certificate").style.display = "block"
+    document.getElementById("user-enroll").style.display = "none"
+ }
+
+
+ function showStudent(){
+   document.getElementById("user-profile").style.display="none"
+    document.getElementById("user-course").style.display = "none"
+    document.getElementById("user-certificate").style.display = "none"
+    document.getElementById("user-enroll").style.display = " block"
+ }
+    </script>
+
+</head>
+<body>
+
+      <!-- navbar starts -->
+ 
+      <div class="Custom-navbar">
+        <nav class="navbar navbar-expand-lg navbar-light bg-primary">
+            <div class="container-fluid">
+                <a class="navbar-brand text-white fs-2" href="index.html">Learn Hub</a>
+    
+    
+                <div class="ml-auto">
+                    <form class="d-flex">
+                        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                        <button class="btn btn-light text-black" type="submit">Search</button>
+                    </form>
+                </div>
+            </div>
+        </nav>
+    </div>
+        <div class="container-fluid">
+            <div class="row flex-nowrap">
+                <div class="col-auto col-md-3 col-xl-2 px-sm-2 px-0 dashboard">
+                    <div class="d-flex flex-column align-items-center align-items-sm-start px-3 pt-2 text-white min-vh-100">
+                        <ul class="nav nav-pills flex-column mb-sm-auto mb-0 align-items-center align-items-sm-start" id="menu">
+                            <li>
+                                <button  class="nav-link px-0 align-middle" onclick="showProfile()" >
+  
+                                    <i class="fs-4 bi-person-circle"></i> <span class="ms-1 d-none d-sm-inline">profile</span> </button>
+                                
+                            </li>
+                            <li class="nav-item">
+                                <button href="#" class="nav-link align-middle px-0" onclick="showCourses()">
+                                    <i class="fs-4 bi-book-half"></i> <span class="ms-1 d-none d-sm-inline">courses</span>
+                                </button>
+                            </li>
+                           
+                            <li>
+                                <a href="#" class="nav-link px-0 align-middle" onclick="showEnroll()" >
+                                    <i class="fs-4 bi-card-text"></i> <span class="ms-1 d-none d-sm-inline">Enroll a course</span></a>
+                            </li>
+                            <li>
+                                <a href="#" class="nav-link px-0 align-middle" onclick="showStudent()">
+                                    <i class="fs-4 bi-people-fill"></i> <span class="ms-1 d-none d-sm-inline">Student </span></a>
+                            </li>
+                        </ul>
+                        <hr>
+                     
+                    </div>
+                </div>
+                <div class="col">
+                  <!-- profile-overview -->
+                  <div id="user-profile">
+                    <h1 class="text-center">Dashboard</h1>
+                  <div class="container">
+                    <div class="row">
+                        <div class="col-md-3 col-12">
+                          <a href="#">
+                            <img src="./icons/user.png" class="img-fluid user-icon" alt="">
+                          </a>
+                        </div>
+                        <div class="col-md-9 col-12 mt-4">
+                            <div class="text-center text-md-start">
+                                <h1>Siranjeevi</h1>
+                                <h4>Karpagam College Of Enginneering</h4>
+                                <h5><a href="#" class="text-decoration-none">Linked In</a></h5>
+                            </div>
+                          <div class="card mt-4">
+                            <div class="card-header">
+                              Achievements
+                            </div>
+                            <div class="card-body">
+                              <h5 class="card-title">Cloud Code Achievement</h5>
+                              <p class="card-text">achieved no sql database ceriticate</p>
+                              <a href="#" class="btn btn-primary">view Certificate</a>
+                            </div>
+                          </div>
+                          <div class="card mt-4">
+                            <div class="card-header">
+                              Achievements
+                            </div>  
+                            <div class="card-body">
+                              <h5 class="card-title">Python (Beginner)</h5>
+                              <p class="card-text">achieved Python Certificate as Beginner</p>
+                              <a href="#" class="btn btn-primary">view Certificate</a>
+                            </div>
+                          </div>
+                        </div>
+                    </div>
+                  </div>
+                  </div>
+
+                  <!-- enrolled courses -->
+
+                  <div class="">
+                    <div id="user-course" style="display: none;"> 
+                      <h1 class="text-center">Courses</h1>
+                      <div class="d-flex align-items-start">
+                        <div class="container">
+                           <div class="row">
+                            <div class="col-12 col-md-3">
+                              <div class="nav flex-column  nav-pills me-3" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+                                <button class="nav-link active" id="v-pills-home-tab" data-bs-toggle="pill" data-bs-target="#v-pills-home" type="button" role="tab" aria-controls="v-pills-home" aria-selected="true">on air</button>
+                                <button class="nav-link" id="v-pills-profile-tab" data-bs-toggle="pill" data-bs-target="#v-pills-profile" type="button" role="tab" aria-controls="v-pills-profile" aria-selected="false">course completed</button>
+                              </div>
+                            </div>
+                          <div class="col-12 col-md-6">
+                            <div class="tab-content" id="v-pills-tabContent">
+                              <div class="tab-pane fade show active" id="v-pills-home" role="tabpanel" aria-labelledby="v-pills-home-tab">
+                                  <div class="card my-2">
+                                    <div class="card-header">
+                                      Achievements
+                                    </div>
+                                    <div class="card-body">
+                                      <h5 class="card-title">Python (Beginner)</h5>
+                                      <p class="card-text">achieved Python Certificate as Beginner</p>
+                                      <a href="#" class="btn btn-primary">view Certificate</a>
+                                    </div>
+                                  </div>
+                                  <div class="card my-2">
+                                    <div class="card-header">
+                                      Achievements
+                                    </div>
+                                    <div class="card-body">
+                                      <h5 class="card-title">Python (Beginner)</h5>
+                                      <p class="card-text">achieved Python Certificate as Beginner</p>
+                                      <a href="#" class="btn btn-primary">view Certificate</a>
+                                    </div>
+                                  </div>
+                                  <div class="card my-2">
+                                    <div class="card-header">
+                                      Achievements
+                                    </div>
+                                    <div class="card-body">
+                                      <h5 class="card-title">Python (Beginner)</h5>
+                                      <p class="card-text">achieved Python Certificate as Beginner</p>
+                                      <a href="#" class="btn btn-primary">view Certificate</a>
+                                    </div>
+                                  </div>
+                              </div>
+                              <div class="tab-pane fade" id="v-pills-profile" role="tabpanel" aria-labelledby="v-pills-profile-tab">
+                                <div class="card my-2">
+                                  <div class="card-header">
+                                    Achievements
+                                  </div>
+                                  <div class="card-body">
+                                    <h5 class="card-title">Python (Beginner)</h5>
+                                    <p class="card-text">achieved Python Certificate as Beginner</p>
+                                    <a href="#" class="btn btn-primary">view Certificate</a>
+                                  </div>
+                                </div>
+                                <div class="card my-2">
+                                  <div class="card-header">
+                                    Achievements
+                                  </div>
+                                  <div class="card-body">
+                                    <h5 class="card-title">Python (Beginner)</h5>
+                                    <p class="card-text">achieved Python Certificate as Beginner</p>
+                                    <a href="#" class="btn btn-primary">view Certificate</a>
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="tab-pane fade" id="v-pills-messages" role="tabpanel" aria-labelledby="v-pills-messages-tab">
+                                <div class="card my-2">
+                                  <div class="card-header">
+                                    Achievements
+                                  </div>
+                                  <div class="card-body">
+                                    <h5 class="card-title">Python (Beginner)</h5>
+                                    <p class="card-text">achieved Python Certificate as Beginner</p>
+                                    <a href="#" class="btn btn-primary">view Certificate</a>
+                                  </div>
+                                </div>
+                                <div class="card my-2">
+                                  <div class="card-header">
+                                    Achievements
+                                  </div>
+                                  <div class="card-body">
+                                    <h5 class="card-title">Python (Beginner)</h5>
+                                    <p class="card-text">achieved Python Certificate as Beginner</p>
+                                    <a href="#" class="btn btn-primary">view Certificate</a>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div> 
+                           </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+
+                  <!-- Enroll a Course -->
+
+                  <div id="user-certificate" style="display: none;">
+                    <div class="container-fluid">
+                      <h3 class="text-center h2 mt-3">Enroll course</h3>
+                        <div class="row">
+                          
+                          <div class="col-md-3">
+
+                          </div>
+                          <div class="col-md-6 col-12 mt-5">
+                            <div>
+                              
+                              <div class="form-floating m-md-3">
+                                <input type="email" class="form-control" id="floatingInput" placeholder="Course Name">
+                                <label for="floatingInput">Course Name</label>
+                              </div>
+                              <div class="form-floating m-md-3">
+                                <input type="password" class="form-control" id="floatingPassword" placeholder="Domain">
+                                <label for="floatingPassword">Domain</label>
+                              </div>
+                              <div class="m-md-3">
+                                <label for="formFile" class="form-label">Upload course image</label>
+                                <input class="form-control" type="file" id="formFile">
+                              </div>
+                              <div class="form-floating m-md-3">
+                                <textarea class="form-control" placeholder="about the course" id="floatingTextarea2" style="height: 100px"></textarea>
+                                <label for="floatingTextarea2">about the course</label>
+                              </div>
+
+                              <div class="m-3">
+                                <button class="btn btn-primary">Enroll the course</button>
+                              </div>
+                            </div>
+
+                          </div>
+                          <div class="col-md-3">
+
+                          </div>
+                      </div>
+                      
+
+                    </div>                    
+                  </div>
+
+                  <!-- students enrolled -->
+
+                  <div id="user-enroll">
+                    <h2 class="text-center my-2">Student Enrolled</h2>
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-2"></div> 
+                            <div class="col-md-8 col-12">
+                                <div class="table-responsive">
+                                    <table class="table table-dark table-hover">
+                                        <thead>
+                                            <tr>
+                                                <th scope="col">Name</th>
+                                                <th scope="col">Course</th>
+                                                <th scope="col">Email</th>
+                                                <th scope="col">Status</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>steve</td>
+                                                <td>machine learning</td>
+                                                <td>siranjeevi0619@gmail.com</td>
+                                                <td>completed</td>
+                                            </tr>
+                                            <tr>
+                                                <td>steve</td>
+                                                <td>machine learning</td>
+                                                <td>siranjeevi0619@gmail.com</td>
+                                                <td>completed</td>
+                                            </tr>
+                                            <tr>
+                                                <td>steve</td>
+                                                <td>machine learning</td>
+                                                <td>siranjeevi0619@gmail.com</td>
+                                                <td>completed</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                            <div class="col-md-2"></div> <!-- Adjusted column width -->
+                        </div>
+                    </div>
+                </div>
+              
+            </div>
+        </div>
+</div>
+
+
+
+        
+    
+        <div class="footers">
+          <div class="container">
+            <div class="row p-5 pb-2 text-white">
+              <div class="col-sm-3 col-md-6 col-lg-3">
+                <a class="text-decoration-none text-white h3 paragraph" href="index.html">Learn Hub</a>
+                
+                <p class="">Coimbatore, Tamil Nadu</p>
+              </div>
+              <div class="col-sm-3 col-md-6 col-lg-3">
+                <p class="h5 mb-3 text-decoration-none text-white paragraph">AI Courses</p>
+                <div  class="mb-2">
+                  <a href="#" class="footershref text-decoration-none ">Prompt Engineering</a>
+                </div>
+                <div  class="mb-2">
+                  <a href="#" class="footershref text-decoration-none ">Machine Learning Specialization</a>
+                </div>
+                <div  class="mb-2">
+                  <a href="#" class="footershref text-decoration-none ">AI for Everyone</a>
+                </div>
+                <div  class="mb-2">
+                  <a href="#" class="footershref text-decoration-none ">Generative AI</a>
+                </div>
+              </div>
+              <div class="col-sm-3 col-md-6 col-lg-3">
+                <p class="h5 mb-3 paragraph">Popular Programs</p>
+                <div class="mb-2">
+                  <a href="#" class="footershref text-decoration-none">Google Data Analytics Certificate</a>        
+                </div>
+                <div class="mb-2">
+                  <a href="#" class="footershref text-decoration-none">Google Project Management Certificate</a>        
+                </div>
+                <div class="mb-2">
+                  <a href="#" class="footershref text-decoration-none">IBM Data Science Certificate </a>        
+                </div>
+                <div class="mb-2">
+                  <a href="#" class="footershref text-decoration-none">UI/UX Design Specilization</a>        
+                </div>
+              </div>
+              <div class="col-sm-3 col-md-6 col-lg-3 " >
+                <p class="h5 mb-3 paragraph">Social Media</p>
+                <div class="mb-2">
+                  <a href="#" class="social socialinstagram text-decoration-none "><i class="fa-brands fa-instagram icons"></i>  Instagram</a>
+                </div>
+                <div class="mb-2">
+                  <a href="#" class="social sociallinkedin text-decoration-none"><i class="fa-brands fa-linkedin icons"></i>  Linked in</a>
+                </div>
+                <div class="mb-2">
+                  <a href="#" class="social socialtwitter text-decoration-none"><i class="fa-brands fa-square-twitter icons"></i>  Twitter</a>
+                </div>
+                <div class="mb-2">
+                  <a href="#" class="social socialfacebook text-decoration-none"><i class="fa-brands fa-facebook icons"></i>  Facebook</a>
+                </div>
+              </div>
+              
+              <div class="col-sm-12 pt-4">
+                <p class="text-white text-center">Copyright - All rights reserved &copy; 2024</p>
+              </div>
+            </div>
+          </div>
+        
+      </div>  
+   
+  
+  </body>
+</html>

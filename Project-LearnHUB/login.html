@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Login</title>
+        <link rel="stylesheet" href="./styles/login.css">
+        <meta charset="UTF-8">
+        <link rel="Shortcut Icon"
+        type="image/png"
+        href="cloudatom.png">
+        <link rel="html" href="signin.html">
+        <link rel="html" href="index.html">
+    </head>
+    <body>
+        <h2>Learn Hub</h2>
+    
+        <form id="loginForm">
+            <h1>Login</h1>
+        
+        <label>Email</label>    
+        <input type="email" name="email" class="email"  id="email" required="required">
+        <label>Password</label>
+        <input type="password" name="password" class="password" id="password" required="required" >
+
+        <button class="btn" onclick="login()">Login</button>
+        <p>new for Learn HUB ?   <a href="signin.html">Sign In</a></p>
+        <a href="frontup.html">forgot password ?</a>
+        </form>
+        <script>
+            const validEmail = "suranofficial7@gmail.com";
+            const validPassword = "password";
+
+            document.getElementById("loginForm").addEventListener("submit", function(event) {
+            event.preventDefault(); 
+    
+            const emailInput = document.getElementById("email");
+            const passwordInput = document.getElementById("password");
+
+            const enteredEmail = emailInput.value.trim();
+            const enteredPassword = passwordInput.value.trim();
+
+            if (enteredEmail === validEmail && enteredPassword === validPassword)
+            {
+            window.location.href = "index.html";
+            }
+            else
+            {
+       
+            emailInput.value = "";
+            passwordInput.value = "";
+            }
+            });
+
+
+        </script>
+
+    </body>
+</html>

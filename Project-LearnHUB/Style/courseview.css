@@ -1,0 +1,14 @@
+.popover .close {
+    color: #aaa;
+    float: right;
+    font-size: 20px;
+    font-weight: bold;
+    cursor: pointer;
+  }
+  
+  .popover .close:hover,
+  .popover .close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+  }
